@@ -1,0 +1,26 @@
+Node.js
+
+Precisa instalar o node.js https://nodejs.org/en/
+
+Crie um diretório workspace;
+dentro dele crie outro casadocodigo;
+e crie um arquivo olaMundoNode.js com com conteudo console.log('Olá Mundo Node');
+
+- abra o terminal e faça o passo a passo:
+
+> mkdir workspace
+// entre dentro do diretório
+> cd workspace
+// crie o diretório casadocodigo;
+> mkdir casadocodigo
+//entre no diretório
+> cd casadocodigo
+// crie um arquivo olaMundoNode.js com com conteudo console.log('Olá Mundo Node');
+> echo "console.log('Olá Mundo Node')" > olaMundoNode.js
+// após rode o comando
+> node olaMundoNode.js
+//deve aparece 
+> Olá Mundo Node
+
+~/workspace/casadocodigo$ node olaMundoNode
+Olá Mundo Node
