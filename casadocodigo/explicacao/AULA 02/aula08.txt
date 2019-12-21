@@ -1,0 +1,16 @@
+Listagem estática de livros
+
+Instalando Marko.js que serve para gerar templates HTML.
+npm install marko@4.13.4-1 --save-exact
+
+Precisamos inserir as informações do marck no nosso arquivo custom-express.js
+
+Em src, na pasta app crie uma pasta views > livros > lista> lista.marko
+NO arquivo rotas.js, retire o html da rota livros e coloque (html) no lista.marko
+e coloque um tabela;
+
+No arquivo rotas.js onde estava o html em livros, o que eu quero é pegar o conteudo de livros.marko
+
+Executaremos o método resp.marko(), que foi habilitado com a inclusão do Marko no nosso projeto. 
+Com ele, poderemos exibir arquivos .marko para o cliente na resposta, sendo necessário apenas importar
+o arquivo com essa extensão, o que também é feito com o método require()
