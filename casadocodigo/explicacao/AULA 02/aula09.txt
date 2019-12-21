@@ -1,0 +1,39 @@
+Templates dinâmicos;
+
+Vimos que podemos utilizar o nosso resp e invocar o marko;
+Que vai receber a pagina, que o usuário solicitou;
+além da pagina como 1º param, o marko receber o 2º param.
+Que é um objeto javascript, contento as informações que queremos enviar na tela a ser carregada;
+O que eu preciso fazer, é definir as chaves e os valores desse objeto js.
+
+Como estamos fazendo uma listagem de livros, eu posso definir a chave livros, e passar como valor dessa chave
+o obj javascript ou array, exemplo do array:
+
+resp.marko(
+        require('../views/livros/lista/lista.marko'),
+        {
+            livros: [
+                { 
+                    id: 1,
+                    titulo: 'Fundamentos do Node'
+                },
+                { 
+                    id: 2,
+                    titulo: 'Node Avançado'
+                }
+            ]
+        }
+
+    );
+
+O que eu quero é carregar lista.marko e passar um obj js para essa pag.
+Cujo o conteudo só tera uma chave, chamada livros e o valor, o array de livros.
+
+Na tag <tr> de lista.marko, na qual havíamos definido o livro estático, 
+criaremos um for () recebendo data, uma variável disponibilizada pelo Marko cujo valor representará o objeto JavaScript 
+que passamos no segundo parâmetro da função marko(). Como esse objeto tem uma propriedade livros, 
+podemos acessá-la com o auxílio de uma variável auxiliar for (data.livros).
+
+Agora queremos imprimir o id e o titulo da variável livro. 
+Para isso, usaremos uma marko expression, que é uma forma de referenciar uma variável em nossa página. 
+Ela é utilizada com ${}, passando a referência dentro dessa expressão
