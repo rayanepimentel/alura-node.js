@@ -1,0 +1,9 @@
+Aula 06
+
+Instalar o nodemon
+
+npm install-save-dev nodemon
+
+nodemon server.js
+Rodando este comando você não precisará se preocupar em reiniciar manualmente seu app 
+toda vez que atualizar seus códigos.
