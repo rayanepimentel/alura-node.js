@@ -1,0 +1,41 @@
+
+#Refatoração
+
+Aula 03
+
+Repare que estamos fazendo três coisas diferentes no mesmo arquivo: server.js
+
+- a importação do express
+- a criação do servidor
+- a definição das rotas
+
+Os nossos arquivos precisam ter reponsabilidades única.
+
+O que precisamos é separar cada uma dessas responsabilidades
+
+1º- preciso trazer o express e chama-lo
++ simples: 
+criar um modulo na src - config
+e nele vamos colocar tanto a importação, quão a chamada do express;
+E no server.js eu importo este arquivo;
+
+
+Aula 04;
+
+Agora vamos refatorar as routas:
+- Crie uma pasta app e dentro dela uma pasta routas > routas.js;
+Coloque as routas do serve.js na routas.js;
+
+- Precisamos declarar a exportação desse module de routas;
+- a exportação será custmo-express;
+
+//importando  routas
+apos a const app, import routas.js
+receber uma const, retornada meu modulo, receber um param.
+
+//rotas eu quero exportar meu modules.exports = (app) => { // receber um param.
+//rotas app.get....
+};
+Eu estou exportando do meu modules uma função, capaz de receber um param. que chamaremos de app, que é o nome que é o nome
+que estamos utilizando nas rotas app.get
+
