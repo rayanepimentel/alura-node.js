@@ -1,0 +1,9 @@
+Acessando BD.
+
+Antes de tudo, no terminal, executaremos o comando npm install sqlite3@4.0.2 --save-exact para instalar o banco de dados que utilizaremos no curso. Com o SQLite habilitado, precisaremos colocar o arquivo database.js dentro da pasta "config" do nosso projeto.
+
+Esse arquivo importará o SQLite e criará uma instância do nosso banco de dados:
+
+const sqlite3 = require('sqlite3').verbose();
+const bd = new sqlite3.Database('data.db');
+

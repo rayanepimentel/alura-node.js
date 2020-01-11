@@ -25,13 +25,13 @@ function render(input, out, __component, component, state) {
 
   var for__9 = 0;
 
-  marko_forEach(data.livros, function(gato) {
+  marko_forEach(data.livros, function(livro) {
     var keyscope__10 = "[" + ((for__9++) + "]");
 
     out.w("<tr><td>" +
-      marko_escapeXml(gato.id) +
+      marko_escapeXml(livro.id) +
       "</td><td>" +
-      marko_escapeXml(gato.titulo) +
+      marko_escapeXml(livro.titulo) +
       "</td></tr>");
   });
 
