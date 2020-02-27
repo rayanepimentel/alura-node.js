@@ -31,9 +31,24 @@ module.exports = (app) => {
                 .catch(erro => console.log(erro));//  método catch(), que é executado quando acontece algum erro no processamento de uma Promise.
     
     });
-     
+
     app.get('/livros/form', function(req, resp) {
-        resp.marko(require('../views/livros/form/form.marko'));
+        resp.marko(require('../views/livros/form/form.marko'), { livro: {} });
+    });
+
+    app.get('/livros/form/:id', function(req, resp) {
+        const id = req.params.id;
+        const livroDao = new LivroDao(db);
+    
+        livroDao.buscaPorId(id)
+            .then(livro => // o livro que foi retornado
+                resp.marko(
+                    require('../views/livros/form/form.marko'),
+                    { livro: livro }
+                )
+            )
+            .catch(erro => console.log(erro));
+    
     });
 
     app.post('/livros', function(req, resp) { 
@@ -53,6 +68,7 @@ module.exports = (app) => {
              .then(() => resp.status(200).end())// eu não quero fazer uma nova navegação, só quero devolver status 200, ou seja tudo deu certo
              .catch(erro => console.log(erro));
     });
+
     
     });
 }

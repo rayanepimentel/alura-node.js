@@ -26,3 +26,9 @@ Moveremos o arquivo remove-livros.js para a recém-criada pasta "js".
 Precisaremos, então, filtrar as requisições que chegam à nossa aplicação. 
 Já conhecemos um ótimo recurso para isso: os middlewares da plataforma Node.
 
+Aula 06 -
+
+Edição de livros
+De volta ao arquivo rotas.js, criaremos uma nova rota para atender à URL /livros/form/:id - 
+ou seja, a URL do nosso formulário de cadastro, com a adição de uma sintaxe para criação de variáveis.
+

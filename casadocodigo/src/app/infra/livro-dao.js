@@ -1,4 +1,4 @@
-class livroDao {
+class LivroDao {
 
     constructor(db) {
         this._db = db;
@@ -7,11 +7,11 @@ class livroDao {
     adiciona(livro) {
         return new Promise((resolve, reject) => {
             this._db.run(`
-                INSERT INTO LIVROS (
-                    titulo,
+                INSERT INTO livros (
+                    titulo, 
                     preco,
                     descricao
-                ) values (?, ?, ?)
+                ) values (?,?,?)
                 `,
                 [
                     livro.titulo,
@@ -19,15 +19,14 @@ class livroDao {
                     livro.descricao
                 ],
                 function (err) {
-                    if(err) {
-                        console.log('Não é possível add o livro!');
+                    if (err) {
+                        console.log(err);
+                        return reject('Não foi possível adicionar o livro!');
                     }
 
                     resolve();
                 }
             )
-
-
         });
     }
 
@@ -41,11 +40,11 @@ class livroDao {
                     return resolve(resultados);
                 }
             )
-
         });
     }
 
-    buscarId(id) {
+    buscaPorId(id) {
+
         return new Promise((resolve, reject) => {
             this._db.get(
                 `
@@ -60,9 +59,7 @@ class livroDao {
                     }
                     return resolve(livro);
                 }
-            )
-
-
+            );
         });
     }
 
@@ -90,6 +87,7 @@ class livroDao {
             });
         });
     }
+
     remove(id) {
 
         return new Promise((resolve, reject) => {
@@ -111,4 +109,4 @@ class livroDao {
     }
 }
 
-module.exports = livroDao;
+module.exports = LivroDao;
