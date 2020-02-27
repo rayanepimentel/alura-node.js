@@ -1,0 +1,27 @@
+-> Criar o formulário de cadastro;
+-> Criar duas rotas:
+   - A rota de acesso ao formulŕio de cadastro; app.get
+   - A rota de envio dos dados do formulário. app.post -> protocolo post.
+
+aula 03 - 
+
+Pegar requisição que está vindo do navegador, jogar as informações dentro dela
+antes da requisição chegar na rota, onde a lógica da nossa aplicação é implementada.
+É só depois que essa requisição estiver com todas as informações do form. ela poderá chegar na nossa rota.
+
+No Node, isso é possível por meio dos famosos middlewares, que funcionam como filtros. 
+Com eles, podemos, por exemplo, manipular uma requisição antes que ela chegue na nossa lógica de negócios.
+
+Para começarmos a implementar mais essa funcionalidade, precisaremos, primeiramente, instalar o body-parser, 
+o módulo do Node que nos ajudará nessa tarefa.
+
+npm install body-parser@1.18.3 --save-exac
+
+Aula 04 -
+
+Sobre middlewares:
+Como o próprio nome indica, são trechos intermediários de código que são executados entre o envio da requisição 
+e seu tratamento pela rota ativada!
+O middleware, de modo geral, é composto por um padrão de URLs que são usadas para o ativar e um callback que recebe
+a requisição, a resposta e uma função, normalmente chamada de next, que deve ser invocada para que o 
+processamento da requisição siga em frente.
