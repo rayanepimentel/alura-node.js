@@ -58,6 +58,16 @@ module.exports = (app) => {
         livroDao.adiciona(req.body)
                 .then(resp.redirect('/livros'))
                 .catch(erro => console.log(erro));//  método catch(), que é executado quando acontece algum erro no processamento de uma Promise.
+    });
+     //editar sem incluir um novo livro
+    app.put('/livros', function(req, resp){
+        console.log(req.body);
+
+        const livroDao = new LivroDao(db);
+        livroDao.atualiza(req.body)
+                .then(resp.redirect('/livros'))
+                .catch(erro => console.log(erro));
+    })
 
    // app.delete('/livros/${livrosID}', function(req, resp){});]
     app.delete('/livros/:id', function(req, resp){
@@ -70,5 +80,5 @@ module.exports = (app) => {
     });
 
     
-    });
+    
 }

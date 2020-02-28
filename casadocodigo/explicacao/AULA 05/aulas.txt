@@ -32,3 +32,18 @@ Edição de livros
 De volta ao arquivo rotas.js, criaremos uma nova rota para atender à URL /livros/form/:id - 
 ou seja, a URL do nosso formulário de cadastro, com a adição de uma sintaxe para criação de variáveis.
 
+Aula 08 - 
+
+Editar o livro e não incluir um novo livro.
+
+Metodo put
+
+filtrar todas as requisições:
+se tiver Id (do livro) - eu preciso editar - Ou seja trocar o method post para put;
+SN tiver Id - o que eu quero fazer é add o livro
+
+O que precisamos fazer é sobrescrever o method de envio da requisição dada a uma condição
+especifica.
+
+Felizmente, já existe um middleware que faz justamente isso, 
+chamado method-override.
